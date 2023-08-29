@@ -27,6 +27,8 @@ function AppBar() {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "space-between",
+                gap: 2,
+                overflow: "auto",
             }}
         >
             <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
@@ -48,18 +50,21 @@ function AppBar() {
                         Trello
                     </Typography>
                 </Box>
-                <Workspaces />
-                <Recent />
-                <Starred />
-                <Templates />
-                <Button variant="outlined">Create</Button>
+                <Box sx={{ display: { sx: "none", md: "flex" }, gap: 1 }}>
+                    <Workspaces />
+                    <Recent />
+                    <Starred />
+                    <Templates />
+                    <Button variant="outlined">Create</Button>
+                </Box>
             </Box>
             <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
                 <TextField
                     id="outlined-search"
-                    label="Search field"
+                    label="Search..."
                     type="search"
                     size="small"
+                    sx={{ minWidth: "120px" }}
                 />
                 <ModeSelect />
                 <Tooltip title="Notification">
@@ -68,11 +73,13 @@ function AppBar() {
                         variant="dot"
                         sx={{ cursor: "pointer" }}
                     >
-                        <NotificationNoneIcon />
+                        <NotificationNoneIcon sx={{ color: "primary.main" }} />
                     </Badge>
                 </Tooltip>
                 <Tooltip title="Help">
-                    <HelpOutlineIcon sx={{ cursor: "pointer" }} />
+                    <HelpOutlineIcon
+                        sx={{ cursor: "pointer", color: "primary.main" }}
+                    />
                 </Tooltip>
                 <Profiles />
             </Box>

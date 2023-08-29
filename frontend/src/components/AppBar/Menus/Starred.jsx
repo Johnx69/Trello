@@ -25,7 +25,7 @@ function Starred() {
                 onClick={handleClick}
                 endIcon={<ExpandMoreIcon />}
             >
-                starred
+                Starred
             </Button>
             <Menu
                 id="basic-menu-starred"

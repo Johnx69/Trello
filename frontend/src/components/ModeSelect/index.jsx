@@ -7,6 +7,7 @@ import Select from "@mui/material/Select";
 import LightModeIcon from "@mui/icons-material/LightMode";
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
 import SettingsBrightnessIcon from "@mui/icons-material/SettingsBrightness";
+import { Box } from "@mui/material";
 
 function ModeSelect() {
     const { mode, setMode } = useColorScheme();
@@ -17,7 +18,7 @@ function ModeSelect() {
     };
     return (
         <div>
-            <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
+            <FormControl size="small" sx={{ minWidth: "120px" }}>
                 <InputLabel id="label-select-dark-light-mode">Mode</InputLabel>
                 <Select
                     labelId="label-select-dark-light-mode"
@@ -27,7 +28,7 @@ function ModeSelect() {
                     onChange={handleChange}
                 >
                     <MenuItem value="light">
-                        <div
+                        <Box
                             style={{
                                 display: "flex",
                                 alignItems: "center",
@@ -36,15 +37,30 @@ function ModeSelect() {
                         >
                             <LightModeIcon fontSize="small" />
                             Light
-                        </div>
+                        </Box>
                     </MenuItem>
                     <MenuItem value="dark">
-                        <DarkModeOutlinedIcon />
-                        Dark
+                        <Box
+                            style={{
+                                display: "flex",
+                                alignItems: "center",
+                                gap: "8px",
+                            }}
+                        >
+                            <DarkModeOutlinedIcon /> Dark
+                        </Box>
                     </MenuItem>
                     <MenuItem value="system">
-                        <SettingsBrightnessIcon />
-                        System
+                        <Box
+                            style={{
+                                display: "flex",
+                                alignItems: "center",
+                                gap: "8px",
+                            }}
+                        >
+                            <SettingsBrightnessIcon />
+                            System
+                        </Box>
                     </MenuItem>
                 </Select>
             </FormControl>
