@@ -1,11 +1,10 @@
 import React from "react";
 import { Box, Button, Menu, MenuItem } from "@mui/material";
 import Divider from "@mui/material/Divider";
-import ListItemText from "@mui/material/ListItemText";
+
 import ListItemIcon from "@mui/material/ListItemIcon";
 import Avatar from "@mui/material/Avatar";
-import Check from "@mui/icons-material/Check";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+
 import Tooltip from "@mui/material/Tooltip";
 import IconButton from "@mui/material/IconButton";
 import PersonAdd from "@mui/icons-material/PersonAdd";
@@ -32,7 +31,7 @@ function Profiles() {
                     aria-expanded={open ? "true" : undefined}
                 >
                     <Avatar
-                        sx={{ width: 30, height: 30 }}
+                        sx={{ width: 36, height: 36 }}
                         src="https://asset.cloudinary.com/dtlqt9ufv/ba6827da648b1a6ae6dafe271a097f40"
                         alt="avatar"
                     />
