@@ -7,6 +7,7 @@ import FilterListIcon from "@mui/icons-material/FilterList";
 import Avatar from "@mui/material/Avatar";
 import AvatarGroup from "@mui/material/AvatarGroup";
 import PersonAddIcon from "@mui/icons-material/PersonAdd";
+import { capitalizeFirstLetter } from "~/utils/formatters";
 
 const MENU_STYLES = {
     color: "white",
@@ -22,7 +23,7 @@ const MENU_STYLES = {
     },
 };
 
-function BoardBar() {
+function BoardBar({ board }) {
     return (
         <Box
             sx={{
@@ -41,20 +42,14 @@ function BoardBar() {
         >
             <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
                 <Chip
-                    icon={<VpnLockIcon />}
-                    label="AnhDao Board"
-                    clickable
-                    sx={MENU_STYLES}
-                />
-                <Chip
                     icon={<Dashboard />}
-                    label="Public/Private Workspaces"
+                    label={board?.title}
                     clickable
                     sx={MENU_STYLES}
                 />
                 <Chip
-                    icon={<BoltIcon />}
-                    label="Automation"
+                    icon={<VpnLockIcon />}
+                    label={capitalizeFirstLetter(board?.type)}
                     clickable
                     sx={MENU_STYLES}
                 />
@@ -64,6 +59,13 @@ function BoardBar() {
                     clickable
                     sx={MENU_STYLES}
                 />
+                <Chip
+                    icon={<BoltIcon />}
+                    label="Automation"
+                    clickable
+                    sx={MENU_STYLES}
+                />
+
                 <Chip
                     icon={<FilterListIcon />}
                     label="Filter"
